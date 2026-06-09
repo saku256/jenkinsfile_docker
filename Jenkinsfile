@@ -20,7 +20,8 @@ pipeline {
         sh 'docker tag demodocker sakshikulkarni256/kucl-0203:demodocker'
         
         // Everything that needs the credentials must live INSIDE this block
-        withCredentials([usernamePassword(credentialsId: '5c716b10-00fb-487c-88f6-79909a1af8fd', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+        withCredentials([usernamePassword(credentialsId: 'b7762d00-c8a0-450e-88c3-8cfe64c5164d', passwordVariable: 'PASS', usernameVariable: 'USER')]) 
+     {
             
             // 1. Double quotes allow Jenkins to pass the variables
             // 2. The backslash (\$) safely escapes them for the shell
