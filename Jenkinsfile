@@ -11,13 +11,13 @@ pipeline {
     stage('build'){
         steps{
             // Run the build on a Unix agent. You must have Maven installed.
-                sh 'docker build -t demodocker .'
+                sh 'docker build -t demodocker1 .'
         }
         
     }
     stage('push') {
     steps {
-        sh 'docker tag demodocker sakshikulkarni256/kucl-0203:demodocker'
+        sh 'docker tag demodocker1 sakshikulkarni256/kucl-0203:demodocker1'
         
         // Everything that needs the credentials must live INSIDE this block
         withCredentials([usernamePassword(credentialsId: 'b7762d00-c8a0-450e-88c3-8cfe64c5164d', passwordVariable: 'PASS', usernameVariable: 'USER')]) 
