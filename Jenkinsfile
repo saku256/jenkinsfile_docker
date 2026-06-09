@@ -5,7 +5,7 @@ pipeline {
         stage('clone') {
     steps {
         // Pass both the URL and the branch inside the git command
-        git url: 'https://github.com/saku256/demodockerfile.git', branch: 'main'
+        git url: 'https://github.com/saku256/HTML_test.git', branch: 'main'
     }
 }
     stage('build'){
