@@ -29,7 +29,7 @@ pipeline {
             sh "echo \$PASS | docker login -u \$USER --password-stdin"
             
             // Pushing must also happen while authenticated inside the block
-            sh 'docker push sakshikulkarni256/kucl-0203:demodocker'
+            sh 'docker push sakshikulkarni256/kucl-0203:demodocker1'
         }
     }
 }
