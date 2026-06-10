@@ -17,7 +17,7 @@ pipeline {
     }
     stage('push') {
     steps {
-        sh 'docker tag demodocker1 sakshikulkarni256/kucl-0203:demodocker12'
+        sh 'docker tag demodocker12 sakshikulkarni256/kucl-0203:demodocker12'
         
         // Everything that needs the credentials must live INSIDE this block
         withCredentials([usernamePassword(credentialsId: '6c5e5a6a-1aad-4b6c-966e-fb208dcd75e3', passwordVariable: 'PASS', usernameVariable: 'USER')])  
