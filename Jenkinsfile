@@ -5,19 +5,19 @@ pipeline {
         stage('clone') {
     steps {
         // Pass both the URL and the branch inside the git command
-        git url: 'https://github.com/saku256/HTML_test.git', branch: 'main'
+        git url: 'https://github.com/saku256/demodockerfile.git', branch: 'main'
     }
 }
     stage('build'){
         steps{
             // Run the build on a Unix agent. You must have Maven installed.
-                sh 'docker build -t demodocker123 .'
+                sh 'docker build -t demodock .'
         }
         
     }
     stage('push') {
     steps {
-        sh 'docker tag demodocker123 sakshikulkarni256/kucl-0203:demodocker123'
+        sh 'docker tag demodock sakshikulkarni256/kucl-0203:demodock'
         
         // Everything that needs the credentials must live INSIDE this block
        withCredentials([usernamePassword(credentialsId: '123', passwordVariable: 'PASS', usernameVariable: 'USER')])  
@@ -29,7 +29,7 @@ pipeline {
             sh "echo \$PASS | docker login -u \$USER --password-stdin"
             
             // Pushing must also happen while authenticated inside the block
-            sh 'docker push sakshikulkarni256/kucl-0203:demodocker123'
+            sh 'docker push sakshikulkarni256/kucl-0203:demodock'
         }
     }
 }
